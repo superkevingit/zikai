@@ -34,7 +34,7 @@
 
 .animals-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 20px;
 }
@@ -72,21 +72,22 @@
     justify-content: center;
 }
 
+/* Larger main image for Orange (adopted animals) */
+.animal-card:has(.status-adopted) .animal-image-wrapper {
+    width: 66.66%;
+    max-width: 66.66%;
+}
+
 /* Smaller image for fostered animals */
-.animal-section:last-child .animal-image-wrapper {
+.animal-card:has(.status-fostered) .animal-image-wrapper {
     width: 60%;
     max-width: 60%;
 }
 
 /* Uniform height for fostered animal images */
-.animal-section:last-child .animal-image {
+.animal-card:has(.status-fostered) .animal-image {
     height: 300px;
     object-fit: cover;
-}
-
-/* Smaller cards for fostered animals - two per row */
-.animal-section:last-child .animals-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .animal-image {
@@ -147,6 +148,12 @@
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid #e0e0e0;
+}
+
+/* Smaller thumbnails for Orange (adopted animals) */
+.animal-card:has(.status-adopted) .animal-gallery-vertical img {
+    width: 40px;
+    height: 40px;
 }
 
 .animal-gallery-vertical img:hover {
@@ -254,7 +261,6 @@
   <div class="animals-container">
     
     <div class="animal-section">
-      <h3>Adopted Animals</h3>
       <div class="animals-grid">
         <div class="animal-card">
           <span class="status-badge status-adopted">Adopted</span>
@@ -281,12 +287,22 @@
           </div>
         </div>
         
-      </div>
-    </div>
-    
-    <div class="animal-section">
-      <h3>Fostered Animals</h3>
-      <div class="animals-grid">
+        <div class="animal-card">
+          <span class="status-badge status-fostered">Fostered</span>
+          <div class="animal-photos-container">
+            <div class="animal-image-wrapper">
+              <img src="pics/Shiyi.jpg" alt="Shiyi" class="animal-image" id="shiyi-main" />
+            </div>
+          </div>
+          <div class="animal-name">Shiyi (十一)</div>
+          <div class="animal-info"><strong>Species:</strong> Dog</div>
+          <div class="animal-info"><strong>Breed:</strong> Mini Australian Shepherd</div>
+          <div class="animal-description">
+            Shiyi is my PhD advisor's dog. I have fostered her several times during my advisor's travel. She is very clingy. 
+            She has a unique eating habit: she only eats one piece of dog food at a time, and finishes her meal throughout the day!
+          </div>
+        </div>
+        
         <div class="animal-card">
           <span class="status-badge status-fostered">Fostered</span>
           <div class="animal-photos-container">
@@ -319,23 +335,6 @@
           </div>
         </div>
         
-        <div class="animal-card">
-          <span class="status-badge status-fostered">Fostered</span>
-          <div class="animal-photos-container">
-            <div class="animal-image-wrapper">
-              <img src="pics/Shiyi.jpg" alt="Shiyi" class="animal-image" id="shiyi-main" />
-            </div>
-          </div>
-          <div class="animal-name">Shiyi (十一)</div>
-          <div class="animal-info"><strong>Species:</strong> Dog</div>
-          <div class="animal-info"><strong>Breed:</strong> Mini Australian Shepherd</div>
-          <div class="animal-description">
-            Shiyi is my PhD advisor's dog. I have fostered her several times during my advisor's travel. She is very clingy. 
-            She has a unique eating habit: she only eats one piece of dog food at a time, and finishes her meal throughout the day!
-          </div>
-        </div>
-        
-        <!-- Add more fostered animals here -->
       </div>
     </div>
     
