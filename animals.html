@@ -90,6 +90,17 @@
     object-fit: cover;
 }
 
+/* Same styling for virtual friends */
+.animal-card:has(.status-virtual) .animal-image-wrapper {
+    width: 60%;
+    max-width: 60%;
+}
+
+.animal-card:has(.status-virtual) .animal-image {
+    height: 300px;
+    object-fit: cover;
+}
+
 .animal-image {
     width: 100%;
     height: auto;
@@ -211,6 +222,11 @@
     color: #856404;
 }
 
+.status-virtual {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
 @media (max-width: 768px) {
     .animals-grid {
         grid-template-columns: 1fr;
@@ -278,7 +294,7 @@
           </div>
           <div class="animal-name">Orange</div>
           <div class="animal-info"><strong>Species:</strong> Dog</div>
-          <div class="animal-info"><strong>Breed:</strong> 中国土狗 (Chinese Native Dog)</div>
+          <div class="animal-info"><strong>Breed:</strong> Chinese Native Dog</div>
           <div class="animal-info"><strong>Adopted:</strong> December 2021, Shanghai</div>
           <div class="animal-description">
             Orange is a lovely Chinese native dog who joined our family in December 2021. 
@@ -300,6 +316,22 @@
           <div class="animal-description">
             Shiyi is my PhD advisor's dog. I have fostered her several times during my advisor's travel. She is very clingy. 
             She has a unique eating habit: only eats one piece of dog food at a time, and finishes her meal throughout the day!
+          </div>
+        </div>
+        
+        <div class="animal-card">
+          <span class="status-badge status-virtual">Virtual Friend</span>
+          <div class="animal-photos-container">
+            <div class="animal-image-wrapper">
+              <img src="pics/Zino.jpg" alt="Zino" class="animal-image" id="zino-main" />
+            </div>
+          </div>
+          <div class="animal-name">Zino</div>
+          <div class="animal-info"><strong>Species:</strong> Dog</div>
+          <div class="animal-info"><strong>Breed:</strong> Italian Greyhound</div>
+          <div class="animal-description">
+            Zino is an Italian Greyhound who belongs to my friend Zoe. Although we have never met in person, 
+            I still love her very much! A special virtual friend who brings joy from afar.
           </div>
         </div>
         
