@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Zikai Zhang's Animal Friends - Adopted and Fostered Animals" />
+<meta name="keywords" content="Zikai Zhang, Animal Friends, Adopted Animals, Fostered Animals" />
+<meta name="author" content="Zikai Zhang" />
+<link rel="stylesheet" type="text/css" href="andreas01.css" media="screen" title="andreas01 (screen)" />
+<link rel="stylesheet" type="text/css" href="print.css" media="print" />
+<title>Animal Friends - Zikai Zhang</title>
+
+<style type="text/css"> 
+.firstLevel { list-style: none; } 
+
+.animals-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.animal-section {
+    margin-bottom: 40px;
+}
+
+.animal-section h3 {
+    font-size: 1.8em;
+    color: #286ea0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #286ea0;
+}
+
+.animals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.animal-card {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.animal-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.animal-photos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.animal-image-wrapper {
+    position: relative;
+    width: 33.33%;
+    max-width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Smaller image for fostered animals */
+.animal-section:last-child .animal-image-wrapper {
+    width: 60%;
+    max-width: 60%;
+}
+
+/* Uniform height for fostered animal images */
+.animal-section:last-child .animal-image {
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Smaller cards for fostered animals - two per row */
+.animal-section:last-child .animals-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.animal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(128, 128, 128, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.nav-button:hover {
+    background: rgba(128, 128, 128, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-button.prev {
+    left: 10px;
+}
+
+.nav-button.next {
+    right: 10px;
+}
+
+.animal-gallery-vertical {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.animal-gallery-vertical img {
+    width: 80px;
+    height: 80px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #e0e0e0;
+}
+
+.animal-gallery-vertical img:hover {
+    transform: scale(1.1);
+    border-color: #286ea0;
+}
+
+.animal-gallery-vertical img.active {
+    border-color: #286ea0;
+    border-width: 3px;
+    box-shadow: 0 0 10px rgba(40, 110, 160, 0.3);
+}
+
+.animal-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #303030;
+    margin-bottom: 10px;
+}
+
+.animal-info {
+    color: #505050;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.animal-info strong {
+    color: #286ea0;
+}
+
+.animal-description {
+    color: #606060;
+    line-height: 1.6;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.status-adopted {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-fostered {
+    background: #fff3cd;
+    color: #856404;
+}
+
+@media (max-width: 768px) {
+    .animals-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .animal-section h3 {
+        font-size: 1.5em;
+    }
+}
+</style>
+
+</head>
+
+<body><div id="wrap">
+
+<div id="header">
+</div>
+
+<div id="avmenu">
+<ul class="firstLevel">
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html#about">About Me</a></li>
+<li><a href="index.html#publications">Publications</a></li>
+<li><a href="index.html#teaching">Teaching</a></li>
+<li><a href="index.html#grants">Grants</a></li>
+<li><a href="animals.html">Animal Friends ❤️</a></li>
+</ul>
+</div>
+
+<div id="extras">
+<h3>Links:</h3>
+<p><a href="https://scholar.google.com/citations?user=Ban1y64AAAAJ&hl=en&authuser=2/" target="_blank">Google Scholar</a><p>
+<p><a href="https://www.linkedin.com/in/zikai-z-9852921a1" target="_blank">LinkedIn</a><p>
+<p><a href="https://github.com/superkevingit" target="_blank">GitHub</a></p>
+
+<p><h3>Sponsor:</h3></p>
+<img id="frontphoto" src="unr.png" width="90" height="90" alt="" /><br>
+<img id="frontphoto" src="nsf.png" width="90" height="90" alt="" /><br>
+<img id="frontphoto" src="hdrfs-logo.png" width="90" height="70" alt="" /><br>
+<img id="frontphoto" src="waterreuse.png" width="90" height="70" alt="" /><br>
+
+</div>
+
+<div id="content">
+  <h5>My Animal Friends 🐾</h5>
+  
+  <div class="animals-container">
+    
+    <div class="animal-section">
+      <h3>Adopted Animals</h3>
+      <div class="animals-grid">
+        <div class="animal-card">
+          <span class="status-badge status-adopted">Adopted</span>
+          <div class="animal-photos-container">
+            <div class="animal-image-wrapper">
+              <button class="nav-button prev" onclick="changeImage(-1)">‹</button>
+              <img src="pics/Orange1.JPG" alt="Orange" class="animal-image" id="orange-main" />
+              <button class="nav-button next" onclick="changeImage(1)">›</button>
+            </div>
+            <div class="animal-gallery-vertical">
+              <img src="pics/Orange1.JPG" alt="Orange photo 1" class="thumb active" data-main="pics/Orange1.JPG" />
+              <img src="pics/Orange2.jpg" alt="Orange photo 2" class="thumb" data-main="pics/Orange2.jpg" />
+              <img src="pics/Orange3.jpg" alt="Orange photo 3" class="thumb" data-main="pics/Orange3.jpg" />
+            </div>
+          </div>
+          <div class="animal-name">Orange</div>
+          <div class="animal-info"><strong>Species:</strong> Dog</div>
+          <div class="animal-info"><strong>Breed:</strong> 中国土狗 (Chinese Native Dog)</div>
+          <div class="animal-info"><strong>Adopted:</strong> December 2021, Shanghai</div>
+          <div class="animal-description">
+            Orange is a lovely Chinese native dog who joined our family in December 2021. 
+            She is shy, but very friendly! Always ready for adventures!
+            She stays with my parents now.
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="animal-section">
+      <h3>Fostered Animals</h3>
+      <div class="animals-grid">
+        <div class="animal-card">
+          <span class="status-badge status-fostered">Fostered</span>
+          <div class="animal-photos-container">
+            <div class="animal-image-wrapper">
+              <img src="pics/%20Snoopy.png" alt="Snoopy" class="animal-image" id="snoopy-main" />
+            </div>
+          </div>
+          <div class="animal-name">Snoopy</div>
+          <div class="animal-info"><strong>Species:</strong> Dog</div>
+          <div class="animal-info"><strong>Breed:</strong> Schnauzer</div>
+          <div class="animal-description">
+            Snoopy is a Schnauzer who I helped foster in 2023 when I came to America. 
+            I assisted in reuniting Snoopy with his owner. A wonderful and friendly companion!
+          </div>
+        </div>
+        
+        <div class="animal-card">
+          <span class="status-badge status-fostered">Fostered</span>
+          <div class="animal-photos-container">
+            <div class="animal-image-wrapper">
+              <img src="pics/Dora.jpg" alt="Dora" class="animal-image" id="dora-main" />
+            </div>
+          </div>
+          <div class="animal-name">Dora</div>
+          <div class="animal-info"><strong>Species:</strong> Dog</div>
+          <div class="animal-info"><strong>Breed:</strong> Not sure</div>
+          <div class="animal-description">
+            Dora was my former roommate's dog. She is very energetic and loves to play, 
+            but doesn't like hugs!
+          </div>
+        </div>
+        
+        <div class="animal-card">
+          <span class="status-badge status-fostered">Fostered</span>
+          <div class="animal-photos-container">
+            <div class="animal-image-wrapper">
+              <img src="pics/Shiyi.jpg" alt="Shiyi" class="animal-image" id="shiyi-main" />
+            </div>
+          </div>
+          <div class="animal-name">Shiyi (十一)</div>
+          <div class="animal-info"><strong>Species:</strong> Dog</div>
+          <div class="animal-info"><strong>Breed:</strong> Mini Australian Shepherd</div>
+          <div class="animal-description">
+            Shiyi is my PhD advisor's dog. I have fostered her several times during my advisor's travel. She is very clingy. 
+            She has a unique eating habit: she only eats one piece of dog food at a time, and finishes her meal throughout the day!
+          </div>
+        </div>
+        
+        <!-- Add more fostered animals here -->
+      </div>
+    </div>
+    
+  </div>
+
+</div>
+
+<div id="footer">
+Copyright &copy; 2025 <a href="index.html">Zikai Zhang.</a>
+</div>
+
+</div>
+
+<script type="text/javascript">
+// 图片切换功能
+let currentImageIndex = 0;
+const images = ['pics/Orange1.JPG', 'pics/Orange2.jpg', 'pics/Orange3.jpg'];
+
+function changeImage(direction) {
+    currentImageIndex += direction;
+    
+    // 循环切换
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+    } else if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+    }
+    
+    updateMainImage();
+}
+
+function updateMainImage() {
+    const mainImage = document.getElementById('orange-main');
+    const thumbnails = document.querySelectorAll('.thumb');
+    
+    // 更新主图
+    mainImage.src = images[currentImageIndex];
+    
+    // 更新激活状态
+    thumbnails.forEach(function(t, index) {
+        if (index === currentImageIndex) {
+            t.classList.add('active');
+        } else {
+            t.classList.remove('active');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const mainImage = document.getElementById('orange-main');
+    const thumbnails = document.querySelectorAll('.thumb');
+    
+    thumbnails.forEach(function(thumb, index) {
+        thumb.addEventListener('click', function() {
+            currentImageIndex = index;
+            updateMainImage();
+        });
+    });
+});
+</script>
+
+</body>
+</html>
+
