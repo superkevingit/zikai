@@ -223,7 +223,7 @@ html {
 scroll-behavior: smooth;
 }
 
-#about, #news, #publications, #teaching, #grants {
+#about, #news, #publications, #teaching, #grants, #service {
 scroll-margin-top: 20px;
 }
 
