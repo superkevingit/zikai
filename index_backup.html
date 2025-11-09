@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zikai Zhang - AI Researcher</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="glass-header">
+            <div class="logo">
+                <h1>Zikai Zhang</h1>
+                <p>AI Researcher & PhD Student</p>
+            </div>
+            <nav class="nav-tabs">
+                <button class="tab-btn active" data-tab="about">About</button>
+                <button class="tab-btn" data-tab="research">Research</button>
+                <button class="tab-btn" data-tab="publications">Publications</button>
+                <button class="tab-btn" data-tab="contact">Contact</button>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Chat Terminal Container -->
+            <div class="terminal-container glass-panel" tabindex="0">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control close"></span>
+                        <span class="control minimize"></span>
+                        <span class="control maximize"></span>
+                    </div>
+                    <div class="terminal-title">AI Chat Assistant</div>
+                    <div class="terminal-hint">Ask me anything about Zikai's research</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message bot-message">
+                            <div class="message-header">
+                                <span class="bot-name">Zikai AI</span>
+                                <span class="message-time">now</span>
+                            </div>
+                            <div class="message-content">
+                                <span class="prompt">$</span>
+                                <span class="typing-animation">
+                                    <span class="cursor">|</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <div class="chat-input-wrapper">
+                            <span class="input-prompt">$</span>
+                            <input type="text" id="chat-input" placeholder="Ask about research, publications, or anything else..." autocomplete="off">
+                            <button id="send-button" class="send-button">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Panels -->
+            <div class="content-panels">
+                <div class="content-panel active" id="about-panel">
+                    <div class="glass-card">
+                        <h2>About Me</h2>
+                        <div class="profile-section">
+                            <img src="zikai.jpeg" alt="Zikai Zhang" class="profile-image">
+                            <div class="profile-info">
+                                <h3>Zikai Zhang</h3>
+                                <p class="pronouns">He/Him/His</p>
+                                <p class="title">PhD Student</p>
+                                <p class="institution">Department of Computer Science and Engineering<br>University of Nevada, Reno</p>
+                                <p class="location">Reno, NV, USA</p>
+                            </div>
+                        </div>
+                        <div class="bio">
+                            <h4>Research Interests</h4>
+                            <p>Federated Learning, AI Safety, Computer Vision</p>
+                            
+                            <h4>Education</h4>
+                            <ul>
+                                <li>PhD in Computer Science, University of Nevada, Reno (2023-present)</li>
+                                <li>M.Eng. in Computer Science, Huaqiao University (2018-2021)</li>
+                                <li>B.Eng. in Mechanical Engineering, East China Jiaotong University (2014-2018)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-panel" id="research-panel">
+                    <div class="glass-card">
+                        <h2>Research</h2>
+                        <div class="research-areas">
+                            <div class="research-item">
+                                <h3>Federated Learning</h3>
+                                <p>Developing efficient federated learning algorithms with heterogeneous client optimization and LoRA allocation strategies.</p>
+                            </div>
+                            <div class="research-item">
+                                <h3>AI Safety</h3>
+                                <p>Investigating backdoor attacks in federated learning environments and developing robust defense mechanisms.</p>
+                            </div>
+                            <div class="research-item">
+                                <h3>Computer Vision</h3>
+                                <p>Exploring computer vision applications in smart grid systems and cyber-physical systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-panel" id="publications-panel">
+                    <div class="glass-card">
+                        <h2>Selected Publications</h2>
+                        <div class="publications">
+                            <div class="publication-item">
+                                <h4>Federated Learning for Smart Grid: A Survey on Applications and Potential Vulnerabilities</h4>
+                                <p class="authors">Zikai Zhang, Suman Rath, Jiahao Xu, and Tingsong Xiao</p>
+                                <p class="venue">ACM Transactions on Cyber-Physical Systems (ACM TCPS), 2025</p>
+                            </div>
+                            <div class="publication-item">
+                                <h4>Fed-HeLLo: Efficient Federated Foundation Model Fine-Tuning with Heterogeneous LoRA Allocation</h4>
+                                <p class="authors">Zikai Zhang, Ping Liu, Jiahao Xu, and Rui Hu</p>
+                                <p class="venue">IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2025</p>
+                            </div>
+                            <div class="publication-item">
+                                <h4>Detecting Backdoor Attacks in Federated Learning via Direction Alignment Inspection</h4>
+                                <p class="authors">Jiahao Xu, Zikai Zhang, and Rui Hu</p>
+                                <p class="venue">Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR), 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-panel" id="contact-panel">
+                    <div class="glass-card">
+                        <h2>Contact & Links</h2>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <h4>Email</h4>
+                                <p>zikaiz[at]unr[dot]edu</p>
+                            </div>
+                            <div class="contact-item">
+                                <h4>Office</h4>
+                                <p>William N. Pennington Engineering Building (WPEB) 402<br>1664 N. Virginia Street, Reno, NV 89557</p>
+                            </div>
+                            <div class="contact-links">
+                                <a href="https://scholar.google.com/citations?user=Ban1y64AAAAJ&hl=en&authuser=2/" target="_blank" class="link-btn">Google Scholar</a>
+                                <a href="https://orcid.org/my-orcid?orcid=0009-0006-7437-6424" target="_blank" class="link-btn">ORCID</a>
+                                <a href="https://www.linkedin.com/in/zikai-z-9852921a1" target="_blank" class="link-btn">LinkedIn</a>
+                                <a href="https://github.com/superkevingit" target="_blank" class="link-btn">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
